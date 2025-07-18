@@ -38,6 +38,8 @@ android {
         compose = true
     }
 }
+val room_version = "2.6.0"
+val koin_version = "3.4.0"
 
 dependencies {
 
@@ -58,4 +60,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("androidx.room:room-runtime:$room_version")
+    //kapt("androidx.room:room-compiler:$room_version")
+    implementation("io.insert-koin:koin-core:$koin_version")
+    implementation("io.insert-koin:koin-android:$koin_version")
 }
+
