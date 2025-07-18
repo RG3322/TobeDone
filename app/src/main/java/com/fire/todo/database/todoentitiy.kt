@@ -13,6 +13,8 @@ data class TodoEntity(
     val id: Long = 0,
     @ColumnInfo(name = "title")
     val title: String,
+    @ColumnInfo(name = "sub_title")
+    val subTitle: String,
     @ColumnInfo(name = "description")
     val description: String,
     @ColumnInfo(name = "is_completed")
