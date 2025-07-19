@@ -65,5 +65,7 @@ dependencies {
     //kapt("androidx.room:room-compiler:$room_version")
     implementation("io.insert-koin:koin-core:$koin_version")
     implementation("io.insert-koin:koin-android:$koin_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+
 }
 

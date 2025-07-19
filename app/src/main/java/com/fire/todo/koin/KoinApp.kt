@@ -1,4 +1,4 @@
-import android.app.Application
+package com.fire.todo.koin
 
 //import android.app.Application
 
@@ -6,4 +6,4 @@ import android.app.Application
  //   override fun onCreate() {
      //   super.onCreate()
  //   }
-// cant use this file to as=ccess koin as its out of package
+// cant use this file to access koin as its out of package
