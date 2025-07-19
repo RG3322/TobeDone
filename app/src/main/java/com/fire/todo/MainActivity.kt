@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TODOTheme {
-                HomeScreen()
+                HomeScreen( )
 
             }
         }

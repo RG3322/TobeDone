@@ -5,14 +5,13 @@ import androidx.room.Room
 import com.fire.todo.database.TodoDatabase
 import com.fire.todo.repositories.TodoRepo
 import com.fire.todo.repositories.TodoRepoImpl
-//import com.fire.todo.data.TodoDatabase
-//import com.fire.todo.ui.theme.appModule
+import com.fire.todo.screens.HomeViewmodel
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
-import kotlin.jvm.java
 
-open class KoinApp : Application() {
+class KoinApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
@@ -20,21 +19,25 @@ open class KoinApp : Application() {
             androidContext(this@KoinApp)
             modules(
                 module {
+                    // Provide the Room database
                     single {
                         Room.databaseBuilder(
-                            get<Application>(),
-                            TodoDatabase::class.java, // Unresolved reference: TodoDatabase , it should be replaced by AppDatabase
+                            get(),
+                            TodoDatabase::class.java,
                             "db"
                         ).build()
                     }
-                    single{get<TodoDatabase>().todoDao()}//provide DAO from room
 
-                    single<TodoRepo> { TodoRepoImpl(get()) } //provide repository
+                    // Provide DAO
+                    single { get<TodoDatabase>().todoDao() }
 
+                    // Provide Repository
+                    single<com.fire.todo.repositories.TodoRepo> { com.fire.todo.repositories.TodoRepoImpl(get()) }
 
+                    // Provide ViewModel with constructor injection
+                    //viewModel { HomeViewmodel(get()) }
                 }
             )
         }
     }
-
 }

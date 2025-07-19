@@ -1,6 +1,6 @@
 package com.fire.todo.screens
 
-//import org.koin.androidx.compose.koinViewModel
+import org.koin.androidx.compose.koinViewModel
 
 
 import android.util.Log.v
@@ -321,7 +321,3 @@ fun HomeScreen (viewModel: HomeViewmodel = viewModel()) {
         Text(text = todo.addDate, color = Color.White, modifier =   Modifier.padding(end = 8.dp), fontSize = 10.sp)
     }
 
-
-
-
-//18:00
